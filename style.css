@@ -112,6 +112,7 @@ nav {
   margin-bottom: 0;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--border);
+  scroll-margin-top: 84px; /* clears the 64px sticky nav + breathing room */
 }
 
 /* ── PAPERS ── */
