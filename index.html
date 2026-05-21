@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaowen Tan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #efefef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--subtle);
+      font-size: 14px;
+    }
+    .hero-text h1 {
+      font-size: 54px;
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero-tagline {
+      font-size: clamp(16px, 1.2vw + 10px, 21px);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+    .hero-bio {
+      font-size: clamp(15px, 1vw + 9px, 18px);
+      line-height: 1.8;
+      color: #333;
+    }
+
+    @media (max-width: 680px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-photo { max-width: 260px; margin: 0 auto; }
+      .hero-text h1 { font-size: 36px; }
+      .hero-text h1, .hero-tagline, .hero-bio { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Xiaowen Tan</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Wen</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+      <li><a href="https://www.linkedin.com/in/xiaowen-tan-338783273" target="_blank">LinkedIn</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero-wrap">
+  <div class="hero">
+    <div>
+      <img class="hero-photo" src="pic/profile.jpg" alt="Xiaowen Tan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="hero-photo-placeholder" style="display:none;">photo</div>
+    </div>
+    <div class="hero-text">
+      <h1>Xiaowen Tan</h1>
+      <p class="hero-tagline">In it together: employees, firms, and the values they share.</p>
+      <p class="hero-bio">
+        I am a fourth-year PhD student at The University of Texas at Dallas. My research explores
+        how social values carried by social movements, firm initiatives, and culture shape
+        employees' attitudes and behaviors, and how employees as agentic stakeholders impact
+        organizations.
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr id="research" />
+<div class="page-wrap">
+  <div class="section-header">
+    <p class="section-label">Research</p>
+    <div class="section-tabs">
+      <a class="section-tab" href="#under-review">Manuscripts Under Review</a>
+      <a class="section-tab" href="#work-in-progress">Work in Progress</a>
+      <a class="section-tab" href="#proceedings">Proceedings</a>
+    </div>
+  </div>
+
+  <p class="subsection-label" id="under-review">Manuscripts Under Review</p>
+
+  <div class="paper">
+    <div class="paper-title">From the Streets to the Firm: Feminist Social Protests and Male Employee Turnover Decisions</div>
+    <div class="paper-authors"><strong>Tan, X.</strong>, Qian, C., &amp; Takeuchi, R.</div>
+    <div class="paper-venue">Under review — <em>Academy of Management Journal</em></div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Who Gets Cyberattacks? From the Perspective of Corporate Social (Ir)Responsibility</div>
+    <div class="paper-authors"><strong>Tan, X.</strong> &amp; Qian, C.</div>
+    <div class="paper-venue">Under review — <em>Journal of Management</em></div>
+    <div class="paper-awards">
+      <span class="award">★ Best Paper — 85th AOM Annual Meeting, Copenhagen, Jul 2025</span>
+      <span class="award">★ Finalist, SMS Best Student Paper — San Francisco, Oct 2025</span>
+    </div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <p class="subsection-label" id="work-in-progress">Work in Progress</p>
+
+  <div class="paper">
+    <div class="paper-title">When Adversity Strikes: Strategic Attention and Organizational Resilience During Crisis</div>
+    <div class="paper-authors"><strong>Tan, X.</strong>, Qian, C., &amp; Li, A.N.</div>
+    <div class="paper-stage">Writing — Target: <em>Academy of Management Journal</em></div>
+    <div class="paper-awards">
+      <span class="award">★ Nomination, SMS Best Student Paper — Berlin, Oct 2026</span>
+    </div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Organizational Culture and Employee Whistleblowing</div>
+    <div class="paper-authors"><strong>Tan, X.</strong> &amp; Qian, C.</div>
+    <div class="paper-stage">Writing and model adjustment</div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">The Unintended Consequences of Stakeholder Management: A Systematic Review</div>
+    <div class="paper-authors">Qian, C., <strong>Tan, X.</strong>, Liu, Y., &amp; Crilly, D.</div>
+    <div class="paper-stage">Writing — Target: <em>Journal of Management</em></div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Paying Less to Get More: The Impact of Training Costs on Firms' Hiring Strategies</div>
+    <div class="paper-authors">Qian, C., <strong>Tan, X.</strong>, Song, X., &amp; Xia, X.</div>
+    <div class="paper-stage">Writing and model adjustment</div>
+    <div class="paper-links">
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Product Recall and Employee Reaction</div>
+    <div class="paper-authors">Wu, J., Jiang, N., Qian, C., &amp; <strong>Tan, X.</strong></div>
+    <div class="paper-stage">Data analysis</div>
+  </div>
+
+  <p class="subsection-label" id="proceedings">Conference Proceedings</p>
+
+  <div class="paper">
+    <div class="paper-title">Corporate Social (Ir)Responsibility and Cyberattacks: A Screening Perspective</div>
+    <div class="paper-authors"><strong>Tan, X.</strong> &amp; Qian, C.</div>
+    <div class="paper-venue"><em>Academy of Management Proceedings</em>, Vol. 2025, No. 1, p. 12706. Academy of Management.</div>
+    <div class="paper-links">
+      <a href="#">PDF</a>
+      <a href="#">DOI</a>
+      <button class="toggle-abstract" onclick="toggleAbstract(this)">Abstract</button>
+    </div>
+    <div class="paper-abstract"></div>
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-name">Xiaowen Tan</p>
+  <p class="footer-info">
+    Naveen Jindal School of Management · University of Texas at Dallas<br>
+    <a href="mailto:xiaowen.tan@utdallas.edu">xiaowen.tan@utdallas.edu</a>
+  </p>
+</footer>
+
+<script>
+  function toggleAbstract(btn) {
+    const abstract = btn.closest('.paper').querySelector('.paper-abstract');
+    abstract.classList.toggle('open');
+    btn.textContent = abstract.classList.contains('open') ? 'Hide' : 'Abstract';
+  }
+</script>
+
+</body>
+</html>

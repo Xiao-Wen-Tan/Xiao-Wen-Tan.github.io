@@ -1,0 +1,227 @@
+/* ── RESET & VARIABLES ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text: #1e1e1e;
+  --muted: #555;
+  --subtle: #888;
+  --border: #e0e0e0;
+  --bg: #ffffff;
+  --max: 1100px;
+  --content: 760px;
+  --pad: clamp(1.5rem, 5vw, 4rem);
+  --heading: clamp(16px, 1.2vw + 10px, 21px); /* matches slogan size */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: clamp(15px, 1.1vw + 9px, 18px);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+a { color: var(--text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--pad);
+  z-index: 100;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-name {
+  font-size: clamp(15px, 1.1vw + 9px, 18px);
+  font-weight: 550;
+  line-height: 1.3;
+}
+.nav-links {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2.25rem);
+  list-style: none;
+}
+.nav-links a {
+  font-size: clamp(13px, 0.8vw + 9px, 15px);
+  color: var(--text);
+}
+
+/* ── PAGE CONTENT ── */
+.page-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 4vw, 4rem) var(--pad);
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.section-header .section-label { margin-bottom: 0; }
+
+/* ── SECTION LABEL (Research / Teaching / Service / About Wen) ── */
+.section-label {
+  font-size: var(--heading);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+/* ── SECTION TABS ── */
+.section-tabs {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.section-tab {
+  font-size: 13px;
+  color: var(--muted);
+  border: none;
+  padding: 0;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.12s;
+}
+.section-tab:hover { color: var(--text); text-decoration: underline; }
+
+/* ── SUBSECTION LABEL (Under Review / Work in Progress / Proceedings) ── */
+.subsection-label {
+  font-size: var(--heading);
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── PAPERS ── */
+.paper {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.paper-title {
+  font-size: clamp(14px, 0.9vw + 9px, 16.5px);
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 0.3rem;
+}
+.paper-authors {
+  font-size: clamp(13px, 0.7vw + 9px, 15px);
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.paper-venue {
+  font-size: clamp(12px, 0.6vw + 8px, 14px);
+  color: var(--subtle);
+  font-style: italic;
+}
+.paper-stage {
+  font-size: 13px;
+  color: var(--subtle);
+  margin-top: 0.2rem;
+}
+.paper-awards {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.award {
+  font-size: 13px;
+  color: var(--muted);
+}
+.paper-abstract {
+  font-size: clamp(13px, 0.7vw + 9px, 15px);
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 0.75rem;
+  display: none;
+}
+.paper-abstract.open { display: block; }
+.paper-links {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.paper-links a,
+.toggle-abstract {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  border: 1px solid #ccc;
+  padding: 3px 12px;
+  border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  line-height: 1.6;
+  transition: background 0.12s;
+  text-decoration: none;
+}
+.paper-links a:hover,
+.toggle-abstract:hover { background: #f5f5f5; text-decoration: none; }
+
+/* ── PLAIN LIST (teaching / service) ── */
+.plain-list {
+  list-style: none;
+  font-size: clamp(14px, 0.9vw + 9px, 17px);
+}
+.plain-list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.plain-list li:first-child { border-top: 1px solid var(--border); }
+.plain-list .sub {
+  font-size: clamp(12px, 0.7vw + 8px, 14.5px);
+  color: var(--muted);
+  display: block;
+}
+
+/* ── DIVIDER ── */
+hr { border: none; border-top: 1px solid var(--border); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: clamp(3rem, 5vw, 5rem) var(--pad);
+  text-align: center;
+}
+.footer-name {
+  font-size: clamp(20px, 1.8vw + 10px, 28px);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.footer-info {
+  font-size: clamp(13px, 0.8vw + 8px, 15.5px);
+  color: var(--muted);
+  line-height: 2;
+}
+.footer-info a { color: var(--muted); }
+.footer-info a:hover { color: var(--text); text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .nav-links { gap: 0.65rem; }
+  .section-header { flex-direction: column; gap: 0.75rem; }
+}
