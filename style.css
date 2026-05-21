@@ -201,6 +201,7 @@ nav {
 
 /* ── DIVIDER ── */
 hr { border: none; border-top: 1px solid var(--border); }
+hr[id] { scroll-margin-top: 84px; }
 
 /* ── FOOTER ── */
 footer {
