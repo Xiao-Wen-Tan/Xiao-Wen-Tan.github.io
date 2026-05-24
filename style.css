@@ -57,6 +57,17 @@ nav {
   font-size: clamp(13px, 0.8vw + 9px, 15px);
   color: var(--text);
 }
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text);
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
 
 /* ── PAGE CONTENT ── */
 .page-wrap {
@@ -358,20 +369,33 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
-  .nav-inner { gap: 0.75rem; }
+  .nav-hamburger { display: block; }
   .nav-links {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    flex-shrink: 1;
-    min-width: 0;
-    gap: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 2px;
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    z-index: 99;
+    padding: 0.25rem 0;
+    gap: 0;
   }
-  .nav-links li { flex-shrink: 0; }
-  .nav-links a { white-space: nowrap; }
-  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links.open { display: flex; }
+  .nav-links li {
+    border-bottom: 1px solid var(--border);
+    flex-shrink: unset;
+  }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a {
+    display: block;
+    padding: 0.85rem var(--pad);
+    font-size: 15px;
+    white-space: nowrap;
+  }
   .section-header { flex-direction: column; gap: 0.75rem; }
   .page-wrap { padding-left: 1rem; padding-right: 1rem; }
   .course-list li { flex-wrap: wrap; gap: 0.1rem; }
