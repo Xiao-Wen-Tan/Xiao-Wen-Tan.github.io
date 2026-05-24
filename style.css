@@ -358,16 +358,19 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
+  .nav-inner { gap: 0.75rem; }
   .nav-links {
     overflow-x: auto;
     flex-wrap: nowrap;
     flex-shrink: 1;
     min-width: 0;
-    gap: 1.1rem;
+    gap: 1rem;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-bottom: 2px;
   }
+  .nav-links li { flex-shrink: 0; }
+  .nav-links a { white-space: nowrap; }
   .nav-links::-webkit-scrollbar { display: none; }
   .section-header { flex-direction: column; gap: 0.75rem; }
   .page-wrap { padding-left: 1rem; padding-right: 1rem; }
