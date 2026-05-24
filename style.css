@@ -1,5 +1,6 @@
 /* ── RESET & VARIABLES ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
 
 :root {
   --text: #1e1e1e;
